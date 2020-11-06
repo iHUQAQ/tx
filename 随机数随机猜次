@@ -1,0 +1,20 @@
+import random
+n=random.randint(1,100)
+print('要猜的数为',n)
+i=random.randint(1,100)
+print(i)
+s=1
+max1=100
+min1=1
+while i!=n:
+    if i>n:
+        max1=i
+        i=random.randint(min1,max1-1)
+        print(i)
+        s+=1
+    elif i<n:
+        min1=i
+        i=random.randint(min1+1,max1)
+        print(i)
+        s+=1
+print('猜了',s,'次')
