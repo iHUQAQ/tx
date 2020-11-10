@@ -1,0 +1,16 @@
+import random
+num = random.randint(0,100)
+time=0
+while time <5:
+    a=int(input(""))
+    if a==num:
+        break
+    elif a<num:
+        print("小")
+    else:
+        print("大")
+    time = time+1
+if time <5:
+    print("赢")
+else:
+    print("次数用完")
