@@ -1,0 +1,12 @@
+import re
+f=open('Walden.txt','r',encoding='utf-8')
+line=f.read()
+line=line.lower()
+line=re.sub('[,.?;:"\'!]','',line)
+words=line.split()
+from collections import Counter
+def counter(words):
+    return Counter(words).most_common(10000)
+dict={}
+dict=counter(words)
+print(dict)
