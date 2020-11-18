@@ -1,0 +1,14 @@
+f=open('Desktop/students.csv','r')
+students={}
+lines=f.readlines()
+for line in lines:
+    tmp1=line.split(',')
+    xuehao=tmp1[0]
+    xingming=tmp1[1]
+    students[xuehao]=xingming
+f.close
+import random
+num=int(input('请输入要点名的人数：'))
+results=random.sample(students.keys(),num)
+for xuehao in results:
+    print(students[xuehao])
