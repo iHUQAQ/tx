@@ -1,0 +1,12 @@
+filename=('demo.py')
+#同文件夹下
+with open(filename,'r') as fp:
+    lines = fp.readlines()
+maxLength = len(max(lines,key=len))
+#确定最长的一行
+lines = [line.rstrip().ljust(maxLength)+'#'+str(index)+'\n'
+#为每行末尾加上“#”和行数
+         for index, line in enumerate(lines)]
+with open(filename[:-3]+'_new.py','w') as fp:
+#命名新文件的名字
+    fp.writelines(lines)
